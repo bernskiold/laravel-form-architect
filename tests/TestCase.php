@@ -12,6 +12,8 @@ class TestCase extends Orchestra
     {
         parent::setUp();
 
+        $this->app['view']->addLocation(__DIR__.'/views');
+
         Factory::guessFactoryNamesUsing(
             fn (string $modelName) => 'BernskioldMedia\\LaravelFormArchitect\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
